@@ -160,10 +160,15 @@
 					<th>작성자</th>
 					<th>등록일</th>
 				</tr>
+				</thead>
 				
-				
-				
-			</thead>
+			<c:forEach var="rev" items = "${review}">
+			
+			<td>${rev.boardCode}</td>
+			<td><a href="<c:url value="/review/${rev.boardCode}"/>">${rev.orderCode}</a></td>
+			<tr>			
+			</c:forEach>	
+			
 			</table>
 			
 		<article id="basicInfoArea">

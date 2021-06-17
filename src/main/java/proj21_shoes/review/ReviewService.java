@@ -10,7 +10,7 @@ import proj21_shoes.dto.ReView;
 @Service
 public interface ReviewService {
 
-	List<ReView> selectReviewByMember(String memberId);
+	List<ReView> selectReviewByMemberId(String memberId);
 
 	int getListCount();
 

@@ -18,6 +18,6 @@ public class ReviewController {
 	
 	@GetMapping("review/{memberId}")
 	public ResponseEntity<Object> review(@RequestParam(value = "memberId", required = false) String memberId){
-		return ResponseEntity.ok(service.selectReviewByMember(memberId));
+		return ResponseEntity.ok(service.selectReviewByMemberId(memberId));
 	}
 }

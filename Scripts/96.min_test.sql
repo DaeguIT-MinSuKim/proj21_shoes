@@ -12,7 +12,7 @@ select pp.product_code, pp.product_main_image, pp.content, im.image_code, im.pro
 
 	
 	
-select * from review r ;
+select * from reviewimage r ;
 
 	
 select *
