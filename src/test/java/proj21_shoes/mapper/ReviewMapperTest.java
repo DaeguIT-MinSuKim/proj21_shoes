@@ -16,7 +16,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import proj21_shoes.config.ContextRoot;
 import proj21_shoes.dto.ReView;
-import proj21_shoes.review.ReviewMapper;
+
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
