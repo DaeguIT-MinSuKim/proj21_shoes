@@ -6,7 +6,7 @@
 	
       <id property="boardCode" column="board_code"/>
       <result property="orderCode" column="order_code"/>
-         <association property="image" javaType="ReviewImage">
+         <association property="reviewImage" javaType="ReviewImage">
    		 	<result property="image" column="image" />
 		 </association>
       <result property="title" column="title"/>
