@@ -39,10 +39,11 @@ public class ReviewMapperTest {
 	@Test
 	public void test01SelectReviewByMemberId() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
-		List<ReView> rList = mapper.selectReviewByMemberId("aaa");
-		System.out.println("rList>>>" + rList);
-		Assert.assertNotNull(rList);
-		log.debug(rList.toString());
+		/*
+		 * List<ReView> rList = mapper.selectReviewByMemberId("aaa");
+		 * System.out.println("rList>>>" + rList); Assert.assertNotNull(rList);
+		 * log.debug(rList.toString());
+		 */
 	}
 
 }

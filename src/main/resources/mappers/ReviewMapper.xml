@@ -3,16 +3,17 @@
 <mapper namespace="proj21_shoes.mapper.ReviewMapper">
 
 	<resultMap type="ReView" id="resReView">
-	
-      <id property="boardCode" column="board_code"/>
-      <result property="orderCode" column="order_code"/>
-         <association property="reviewImage" javaType="ReviewImage">
-   		 	<result property="image" column="image" />
-		 </association>
-      <result property="title" column="title"/>
-      <result property="registDate" column="regist_Date"/>
-      
-   </resultMap>
+
+		<id property="boardCode" column="board_code" />
+		<result property="orderCode" column="order_code" />
+		<result property="title" column="title" />
+		<result property="registDate" column="regist_Date" />
+		<association property="reviewImages"
+			javaType="ReviewImage">
+			<result property="image" column="image" />
+		</association>
+
+	</resultMap>
 	
 	<select id="selectbyMemberId" resultMap="resReView">
 		select r.board_code,
@@ -23,6 +24,5 @@
 		join memberdetail m2 on m.member_id = m2.member_id
 		join reviewimage r2 on r.board_code = r2.board_code
 		where m.member_id = #{memberId};
-
 	</select>
 </mapper>
