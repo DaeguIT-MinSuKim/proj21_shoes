@@ -2,12 +2,8 @@ package proj21_shoes.dto;
 
 public class ReviewImage { 			// 	후기이미지
 	
-	private int boardCode; 		// 	게시판코드
 	private int imageCode; 			//	 이미지코드
-<<<<<<< HEAD
-=======
-	private int boardCode; 		// 	게시판코드
->>>>>>> refs/heads/master
+	private int boardCode; 			// 	게시판코드
 	private String image; 			// 	이미지
 
 	public int getImageCode() {
