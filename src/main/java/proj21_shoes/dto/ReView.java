@@ -10,7 +10,10 @@ public class ReView {					// 상품후기게시판
 	private String title;				// 	제목
 	private String content;				// 	내용
 	private LocalDateTime registDate;	// 	등록일
+<<<<<<< HEAD
 	
+=======
+>>>>>>> refs/heads/master
 	private List<ReviewImage> reviewImages;
 	
 	
