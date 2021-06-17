@@ -5,19 +5,19 @@
 	<resultMap type="ReView" id="resReView">
 
 		<id property="boardCode" column="board_code" />
-		<result property="orderCode" column="order_code" />
 		<result property="title" column="title" />
+		<result property="content" column="content" />
 		<result property="registDate" column="regist_Date" />
-		<association property="reviewImages"
-			javaType="ReviewImage">
-			<result property="image" column="image" />
+		<association property="orderCode">
 		</association>
+		<collection property="reviewImages" >
+		</collection>
 
 	</resultMap>
 	
-	<select id="selectbyMemberId" resultMap="resReView">
+	<select id="selectReviewByMemberId" resultMap="resReView">
 		select r.board_code,
-		r.order_code, r2.image, r.title, m2.member_id, r.regist_date
+		r.order_code, r2.image, r.title, m2.member_id, r.regist_date, r.content 
 		from review	r
 		join `order` o on o.order_code = r.order_code
 		join `member` m on o.member_code = m.member_code

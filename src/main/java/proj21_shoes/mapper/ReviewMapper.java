@@ -1,4 +1,4 @@
-package proj21_shoes.review;
+package proj21_shoes.mapper;
 
 import java.util.List;
 
