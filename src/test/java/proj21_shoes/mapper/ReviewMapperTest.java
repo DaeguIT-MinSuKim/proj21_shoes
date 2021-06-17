@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import proj21_shoes.config.ContextRoot;
+import proj21_shoes.dto.Order;
 import proj21_shoes.dto.ReView;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -29,8 +30,8 @@ public class ReviewMapperTest {
 	@Autowired
 	ReviewMapper mapper;
 
-//	@Autowired
-//	OrderMapper oMapper;
+	@Autowired
+	OrderMapper oMapper;
 
 	@After
 	public void tearDown() throws Exception {

@@ -91,5 +91,6 @@ select *
 		
 select * 
 from `order` o
+join `member` m on o.member_code = m.member_code
 join address a2 on a2.order_code = o.order_code 
 join orderproduct o2 on o.order_code = o2.order_code ;
