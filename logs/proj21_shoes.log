@@ -1,0 +1,19 @@
+[DEBUG] [2021-06-17 12:21] test01SelectReviewByMemberId()
+[DEBUG] [2021-06-17 12:23] test01SelectReviewByMemberId()
+[DEBUG] [2021-06-17 12:26] test01SelectReviewByMemberId()
+[DEBUG] [2021-06-17 12:26] test01SelectReviewByMemberId()
+[DEBUG] [2021-06-17 12:27] test01SelectReviewByMemberId()
+[DEBUG] [2021-06-17 12:27] test01SelectReviewByMemberId()
+[DEBUG] [2021-06-17 12:27] ==>  Preparing: select r.board_code, r.order_code, r2.image, r.title, m2.member_id, r.regist_date from review r join `order` o on o.order_code = r.order_code join `member` m on o.member_code = m.member_code join memberdetail m2 on m.member_id = m2.member_id join reviewimage r2 on r.board_code = r2.board_code where m.member_id = ?;
+[DEBUG] [2021-06-17 12:27] ==> Parameters: aaa(String)
+[TRACE] [2021-06-17 12:27] <==    Columns: board_code, order_code, image, title, member_id, regist_date
+[TRACE] [2021-06-17 12:27] <==        Row: 1, 10001, DrMartin1-main.jpg, 이 가격에 이 퀄리티 리얼?, aaa, 2021-06-15 17:14:32.0
+[DEBUG] [2021-06-17 12:27] <==      Total: 1
+[DEBUG] [2021-06-17 12:27] [ReView [boardCode=1, orderCode=null, title=이 가격에 이 퀄리티 리얼?, content=null, registDate=2021-06-15T17:14:32, reviewImages=null]]
+[DEBUG] [2021-06-17 12:29] test01SelectReviewByMemberId()
+[DEBUG] [2021-06-17 12:29] ==>  Preparing: select r.board_code, r.order_code, r2.image, r.title, m2.member_id, r.regist_date, r.content from review r join `order` o on o.order_code = r.order_code join `member` m on o.member_code = m.member_code join memberdetail m2 on m.member_id = m2.member_id join reviewimage r2 on r.board_code = r2.board_code where m.member_id = ?;
+[DEBUG] [2021-06-17 12:29] ==> Parameters: aaa(String)
+[TRACE] [2021-06-17 12:29] <==    Columns: board_code, order_code, image, title, member_id, regist_date, content
+[TRACE] [2021-06-17 12:29] <==        Row: 1, 10001, DrMartin1-main.jpg, 이 가격에 이 퀄리티 리얼?, aaa, 2021-06-15 17:14:32.0, 가성비 좋아요~
+[DEBUG] [2021-06-17 12:29] <==      Total: 1
+[DEBUG] [2021-06-17 12:29] [ReView [boardCode=1, orderCode=null, title=이 가격에 이 퀄리티 리얼?, content=가성비 좋아요~, registDate=2021-06-15T17:14:32, reviewImages=null]]

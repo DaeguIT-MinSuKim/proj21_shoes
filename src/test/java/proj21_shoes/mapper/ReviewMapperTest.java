@@ -1,4 +1,5 @@
 package proj21_shoes.mapper;
+
 import java.util.List;
 
 import org.apache.ibatis.logging.Log;
@@ -29,20 +30,20 @@ public class ReviewMapperTest {
 	@Autowired
 	ReviewMapper mapper;
 
-	
 	@After
 	public void tearDown() throws Exception {
 		System.out.println();
 	}
-	
 
 	@Test
 	public void test01SelectReviewByMemberId() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+
 		List<ReView> rList = mapper.selectReviewByMemberId("aaa");
 		System.out.println("rList>>>" + rList);
 		Assert.assertNotNull(rList);
 		log.debug(rList.toString());
+
 	}
 
 }

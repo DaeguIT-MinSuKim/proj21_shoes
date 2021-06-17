@@ -80,3 +80,12 @@ delete from cart
 select * from member ;
 
 select * from brand ;where brand_eng_name like concat('n','%');
+
+select r.board_code,
+		r.order_code, r2.image, r.title, m2.member_id, r.regist_date, r.content 
+		from review	r
+		join `order` o on o.order_code = r.order_code
+		join `member` m on o.member_code = m.member_code
+		join memberdetail m2 on m.member_id = m2.member_id
+		join reviewimage r2 on r.board_code = r2.board_code
+		where m.member_id = 'aaa';
