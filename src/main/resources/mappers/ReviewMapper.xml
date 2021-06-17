@@ -6,13 +6,11 @@
 	
       <id property="boardCode" column="board_code"/>
       <result property="orderCode" column="order_code"/>
-         <association property="image" javaType="ReviewImage"/>
-   		 <result property="image" column="image" />
-		    </association>
+         <association property="image" javaType="ReviewImage">
+   		 	<result property="image" column="image" />
+		 </association>
       <result property="title" column="title"/>
       <result property="registDate" column="regist_Date"/>
- 	    
-
       
    </resultMap>
 	
