@@ -248,6 +248,7 @@
 [TRACE] [2021-06-17 14:48] <==        Row: 1, 10001, 이 가격에 이 퀄리티 리얼?, 가성비 좋아요~, 2021-06-15 17:14:32.0, 10001, 111111, 2021-06-15 17:14:32.0, 1000, 0, 배송코드, 0, 111111, aaa, 100, 10000, 5, 0, 2021-06-15 17:14:32.0, aaa, *6C362347EBEAA7DF44F6D34884615A35095E80EB, 테스트1, 1, 2021-06-15 17:14:32.0, test1@test.co.kr, 010-111-8888, 12345, 국채보상로 438, 서구 치과의원, 1, 1, DrMartin1-main.jpg
 [DEBUG] [2021-06-17 14:48] <==      Total: 1
 [DEBUG] [2021-06-17 14:48] [ReView [boardCode=1, orderCode=Order [orderCode=10001, memberCode=Member [memberCode=111111, memberId=null, point=100, cumulativeBuyAmount=10000, gradeCode=null, quitState=false, signUpDate=2021-06-15T17:14:32], orderDate=2021-06-15T17:14:32, paymentAmount=1000, paymentState=false, deliveryCode=배송코드, buyConfirmState=false, orderProduct=[], address=Address [orderCode=10001, recipient=null, zipCode=12345, address=국채보상로 438, detailAddress=서구 치과의원, tel=010-111-8888]], title=이 가격에 이 퀄리티 리얼?, content=가성비 좋아요~, registDate=2021-06-15T17:14:32, reviewImages=[ReviewImage [imageCode=1, boardCode=1, image=DrMartin1-main.jpg]]]]
+<<<<<<< HEAD
 [DEBUG] [2021-06-17 15:02] test01SelectReviewByMemberId()
 [DEBUG] [2021-06-17 15:02] ==>  Preparing: select * from review r join `order` o on o.order_code = r.order_code join `member` m on o.member_code = m.member_code join memberdetail m2 on m.member_id = m2.member_id join reviewimage r2 on r.board_code = r2.board_code where m.member_id = ?;
 [DEBUG] [2021-06-17 15:02] ==> Parameters: aaa(String)
@@ -318,3 +319,12 @@
 [TRACE] [2021-06-17 15:08] <==        Row: 10004, 111114, 2021-06-15 17:14:32.0, 1000, 0, 배송코드, 0, 111114, ddd, 1000, 0, 5, 0, 2021-06-15 17:14:32.0, 10004, 테스트4, 41865, 서대구로 30, 맨투맨 빌딩 4층, 010-666-5555, 10004, 55555, 4, 260, 30
 [TRACE] [2021-06-17 15:08] <==        Row: 10005, 111115, 2021-06-15 17:14:32.0, 1000, 0, 배송코드, 0, 111115, eee, 1000, 0, 5, 0, 2021-06-15 17:14:32.0, 10005, 테스트5, 41092, 안심로90길 22, 해피키즈 유치원, 010-999-3333, 10005, 66666, 5, 270, 20
 [DEBUG] [2021-06-17 15:08] <==      Total: 16
+=======
+[DEBUG] [2021-06-17 14:51] test01SelectReviewByMemberId()
+[DEBUG] [2021-06-17 14:51] ==>  Preparing: select * from review r join `order` o on o.order_code = r.order_code join `member` m on o.member_code = m.member_code join memberdetail m2 on m.member_id = m2.member_id join reviewimage r2 on r.board_code = r2.board_code where m.member_id = ?;
+[DEBUG] [2021-06-17 14:51] ==> Parameters: aaa(String)
+[TRACE] [2021-06-17 14:51] <==    Columns: board_code, order_code, title, content, regist_date, order_code, member_code, order_date, payment_amount, payment_state, delivery_code, buy_confirm_state, member_code, member_id, point, cumulative_buy_amount, grade_code, quit_state, signUp_date, member_id, member_pwd, member_name, gender, birthday, email, tel, zipCode, address, detail_address, image_code, board_code, image
+[TRACE] [2021-06-17 14:51] <==        Row: 1, 10001, 이 가격에 이 퀄리티 리얼?, 가성비 좋아요~, 2021-06-15 16:45:43.0, 10001, 111111, 2021-06-15 16:45:43.0, 1000, 0, 배송코드, 0, 111111, aaa, 1000, 0, 5, 0, 2021-06-15 16:45:43.0, aaa, rootroot, 테스트1, 1, 2021-06-15 16:45:43.0, test1@test.co.kr, 010-111-8888, 12345, 국채보상로 438, 서구 치과의원, 1, 1, DrMartin1-main.jpg
+[DEBUG] [2021-06-17 14:51] <==      Total: 1
+[DEBUG] [2021-06-17 14:51] [ReView [boardCode=1, orderCode=Order [orderCode=10001, memberCode=Member [memberCode=111111, memberId=null, point=1000, cumulativeBuyAmount=0, gradeCode=null, quitState=false, signUpDate=2021-06-15T16:45:43], orderDate=2021-06-15T16:45:43, paymentAmount=1000, paymentState=false, deliveryCode=배송코드, buyConfirmState=false, orderProduct=[], address=Address [orderCode=10001, recipient=null, zipCode=12345, address=국채보상로 438, detailAddress=서구 치과의원, tel=010-111-8888]], title=이 가격에 이 퀄리티 리얼?, content=가성비 좋아요~, registDate=2021-06-15T16:45:43, reviewImages=[ReviewImage [imageCode=1, boardCode=1, image=DrMartin1-main.jpg]]]]
+>>>>>>> branch '0616이민정_후기게시판' of https://github.com/DaeguIT-MinSuKim/proj21_shoes.git

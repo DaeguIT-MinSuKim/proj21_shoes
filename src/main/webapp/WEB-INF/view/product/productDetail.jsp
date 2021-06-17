@@ -125,7 +125,8 @@
 
 		<div class='main'>
 			<div class='main-image'>
-				<img src="${contextPath}/images/${product.productPost.productMainImage} ">
+				<img
+					src="${contextPath}/images/${product.productPost.productMainImage} ">
 			</div>
 
 
@@ -138,98 +139,105 @@
 			<div class="tabs">
 				<div class='product-content active'>
 					<c:forEach var="image" items="${product.productPost.images}">
-					<img src="${contextPath}/images/${image.productCode}/${image.image}">
+						<img
+							src="${contextPath}/images/${image.productCode}/${image.image}">
 					</c:forEach>
 					<p>상품설명 : ${product.productPost.content}</p>
 				</div>
 				<div class='product-review'>
-				<img src="../images/review_detailpage.jpg">
-				
-				<section id="articleForm">
-				<h2>상품 Review</h2>
-				<p>* 별점 및 리뷰 작성 후 작성하기 버튼을 클릭해 주세요.</p>
-		
+					<img src="../images/review_detailpage.jpg">
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th>No.</th>
-					<th>주문번호</th>
-					<th>사진</th>
-					<th>제목</th>
-					<th>작성자</th>
-					<th>등록일</th>
-				</tr>
-				</thead>
-				
-			<c:forEach var="rev" items = "${review}">
-			
-			<td>${rev.boardCode}</td>
-			<td><a href="<c:url value="/review/${rev.boardCode}"/>">${rev.orderCode}</a></td>
-			<tr>			
-			</c:forEach>	
-			
-			</table>
-			
-		<article id="basicInfoArea">
-			
-		</article>
-		<article id="articleContentArea">
-			${article.review_content}
-		</article>
-	</section>
-	<section id="commandList">
-		<a href="reviewReplyForm.do?board_code=${article.board_code}&page=${page}"> [답변] </a> 
-		<a href="reviewModifyForm.do?board_code=${article.board_code}&page=${page}"> [수정] </a> 
-		<a href="reviewDeleteForm.do?board_code=${article.board_code}&page=${page}"> [삭제] </a>
-		<a href="reviewList.do?page=${page}">[목록]</a>&nbsp;&nbsp;
-	</section>
-	</div>
-			
-			<div class='product-QnA'>상품문의</div>
+					<section id="articleForm">
+						<h2>상품 Review</h2>
+						<p>* 별점 및 리뷰 작성 후 작성하기 버튼을 클릭해 주세요.</p>
+
+
+						<table class="table" border="1">
+							<thead>
+								<tr>
+									<td>No.</td>
+									<td>주문번호</td>
+									<td>사진</td>
+									<td>제목</td>
+									<td>작성자</td>
+									<td>등록일</td>
+								</tr>
+
+							</thead>
+							<c:forEach var="rev" items="${review}">
+							<tr>		
+								<td>${rev.boardCode }</td>
+								<td>${rev.orderCode }</td>
+								<td>${rev.reviewImages }</td>
+								<td>${rev.title }</td>
+								<td>${rev.memberId }</td>
+								<td>${rev.registDate }</td>
+								</tr>
+							</c:forEach>
+							</table>
+
+
+						<article id="articleContentArea">
+							${article.review_content}</article>
+					</section>
+					
+					<section id="commandList">
+						<a
+							href="reviewReplyForm.do?board_code=${article.board_code}&page=${page}">
+							[답변] </a> <a
+							href="reviewModifyForm.do?board_code=${article.board_code}&page=${page}">
+							[수정] </a> <a
+							href="reviewDeleteForm.do?board_code=${article.board_code}&page=${page}">
+							[삭제] </a> <a href="reviewList.do?page=${page}">[목록]</a>&nbsp;&nbsp;
+					</section>
+				</div>
+
+				<div class='product-QnA'>상품문의</div>
 			</div>
-			</div>
-		
-		
+		</div>
+
+
 		<div class="order-options">
 			<strong>${product.productName}</strong>
 			<p>
 				<em>Brand : </em> <label>${product.brand.brandEngName }</label>
 			</p>
 			<form action="${contextPath}/addOrderOne" method="post">
-			<div class="styleCode">
-				<label>스타일코드(색상)</label>
-				<c:forEach var="option" items="${product.orderOptions}" varStatus="status">
-					<c:if test="${option.stock >0}">
-					<c:choose>
-						<c:when test="${status.first}">
-							<label>
-							 <input type="radio" name="styleCode" value="${option.styleCode}" hidden="hidden" required>
-								(${option.styleCode},${option.color})
-							</label>
-						</c:when>
-						<c:when test="${option.styleCode == product.orderOptions[status.index-1].styleCode}">
-						</c:when>
-						<c:otherwise>
-							<label>
-							<input type="radio" name="styleCode" value="${option.styleCode}" hidden="hidden" required>
-								(${option.styleCode},${option.color})
-							</label>
-						</c:otherwise>
-					</c:choose>
-					</c:if>
-				</c:forEach>
-			</div>
-			<div id="size">
-				<label>size</label>
-			</div>
-			<p>${product.sellPrice}원</p>
-			<input type="number" name="count" id="count" min="0" required>
-			<div class='submitBtns'>
-				<span id='cart'> 장바구니 </span>
-				<input type="hidden" name="productCode" value="${product.productCode }">
-				<input type='submit' value='구매하기' />
-			</div>
+				<div class="styleCode">
+					<label>스타일코드(색상)</label>
+					<c:forEach var="option" items="${product.orderOptions}"
+						varStatus="status">
+						<c:if test="${option.stock >0}">
+							<c:choose>
+								<c:when test="${status.first}">
+									<label> <input type="radio" name="styleCode"
+										value="${option.styleCode}" hidden="hidden" required>
+										(${option.styleCode},${option.color})
+									</label>
+								</c:when>
+								<c:when
+									test="${option.styleCode == product.orderOptions[status.index-1].styleCode}">
+								</c:when>
+								<c:otherwise>
+									<label> <input type="radio" name="styleCode"
+										value="${option.styleCode}" hidden="hidden" required>
+										(${option.styleCode},${option.color})
+									</label>
+								</c:otherwise>
+							</c:choose>
+						</c:if>
+					</c:forEach>
+				</div>
+				<div id="size">
+					<label>size</label>
+				</div>
+				<p>${product.sellPrice}원</p>
+				<input type="number" name="count" id="count" min="0" required>
+				<div class='submitBtns'>
+					<span id='cart'> 장바구니 </span> <input type="hidden"
+						name="productCode" value="${product.productCode }"> <input
+						type='submit' value='구매하기' />
+				</div>
 			</form>
 		</div>
 	</section>
