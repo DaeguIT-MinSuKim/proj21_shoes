@@ -3,7 +3,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <c:set var="session" value="<%=request.getSession()%>" />
 <!DOCTYPE html>
@@ -152,30 +151,40 @@
 						<h2>상품 Review</h2>
 						<p>* 별점 및 리뷰 작성 후 작성하기 버튼을 클릭해 주세요.</p>
 
-
 						<table class="table" border="1">
-							<thead>
+							<tbody>
 								<tr>
-									<td>No.</td>
-									<td>주문번호</td>
-									<td>사진</td>
-									<td>제목</td>
-									<td>작성자</td>
-									<td>등록일</td>
+									<th scope="row">No.</th>
+									<th scope="row">주문번호</th>
+									<th scope="row">사진</th>
+									<th scope="row">제목</th>
+									<th scope="row">작성자</th>
+									<th scope="row">등록일</th>
 								</tr>
-
-							</thead>
-							<c:forEach var="rev" items="${review}">
+									<!-- 
+								<tr>
+								<td class="ta-c">1</td>
+								<td class="ta-c">1</td>
+								<td class="ta-c">1</td>
+								<td class="ta-c">1</td>
+								<td class="ta-c">1</td>
+								<td class="ta-c">1</td>
+								</tr>
+							-->
+						
+							<c:forEach items="${resReView }" var="rev" varStatus="status">
 							<tr>		
-								<td>${rev.boardCode }</td>
-								<td>${rev.orderCode }</td>
-								<td>${rev.reviewImages }</td>
-								<td>${rev.title }</td>
-								<td>${rev.memberId }</td>
-								<td>${rev.registDate }</td>
-								</tr>
+								<td><c:out value="${rev.boardCode }"></c:out></td>
+								<td><c:out value="${rev.orderCode }"></c:out></td>
+								<td><c:out value="${rev.reviewImages }"></c:out></td>
+								<td><c:out value="${rev.title }"></c:out></td>
+								<td><c:out value="${rev.memberId }"></c:out></td>
+								<td><c:out value="${rev.registDate }"></c:out></td>
+							</tr>
+								 
+					</c:forEach>
 					
-							</c:forEach>
+					</tbody>
 							</table>
 
 

@@ -55,7 +55,7 @@ where m.member_id = 'bbb';
 
 
       
-create or replace view vw_review
+create or replace view reviewList
 as
 select r.board_code, r.order_code, r2.image, r.title, m2.member_id, r.regist_date
 from review r
@@ -64,6 +64,7 @@ join `member` m on o.member_code = m.member_code
 join memberdetail m2 on m.member_id = m2.member_id
 join reviewimage r2 on r.board_code = r2.board_code;
 
+select * from vw_review ;
 
 
 
