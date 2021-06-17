@@ -3,6 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <c:set var="session" value="<%=request.getSession()%>" />
 <!DOCTYPE html>
@@ -173,6 +174,7 @@
 								<td>${rev.memberId }</td>
 								<td>${rev.registDate }</td>
 								</tr>
+					
 							</c:forEach>
 							</table>
 

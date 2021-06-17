@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 import proj21_shoes.dto.ReView;
 import proj21_shoes.mapper.ReviewMapper;
 
-
-
 @Service
 public class ReviewServiceImpl implements ReviewService {
 
@@ -24,6 +22,7 @@ public class ReviewServiceImpl implements ReviewService {
 
 	@Override
 	public int getListCount() {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -32,5 +31,7 @@ public class ReviewServiceImpl implements ReviewService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

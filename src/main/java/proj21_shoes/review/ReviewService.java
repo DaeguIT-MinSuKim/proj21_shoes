@@ -15,5 +15,6 @@ public interface ReviewService {
 	int getListCount();
 
 	ArrayList<ReView> getArticleList(int page, int limit);
+
 	
 }
