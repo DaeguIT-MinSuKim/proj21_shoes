@@ -18,7 +18,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import proj21_shoes.config.ContextRoot;
 import proj21_shoes.dto.ReView;
 
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { ContextRoot.class })
@@ -30,6 +29,9 @@ public class ReviewMapperTest {
 	@Autowired
 	ReviewMapper mapper;
 
+//	@Autowired
+//	OrderMapper oMapper;
+
 	@After
 	public void tearDown() throws Exception {
 		System.out.println();
@@ -40,9 +42,13 @@ public class ReviewMapperTest {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
 
 		List<ReView> rList = mapper.selectReviewByMemberId("aaa");
-		System.out.println("rList>>>" + rList);
+		rList.stream().forEach(System.out::println);
 		Assert.assertNotNull(rList);
 		log.debug(rList.toString());
+
+//		List<Order> rList = oMapper.selectOrderList();
+//		rList.stream().forEach(System.out::println);
+//		Assert.assertNotNull(rList);
 
 	}
 

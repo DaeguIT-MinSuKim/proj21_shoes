@@ -3,21 +3,21 @@
 <mapper namespace="proj21_shoes.mapper.ReviewMapper">
 
 
-	<resultMap type="ReView" id="resReView">
+	<resultMap type="ReView" id="resReView" >
 
-		<id property="boardCode" column="board_code" />
+		<id property="boardCode" column="board_code"/>
 		<result property="title" column="title" />
 		<result property="content" column="content" />
 		<result property="registDate" column="regist_Date" />
-		<association property="orderCode">
-		</association>
-		<collection property="reviewImages">
-		</collection>
+		<association property="orderCode" resultMap="proj21_shoes.mapper.OrderMapper.resOrder"/>
+		<collection property="reviewImages" resultMap="resImage"/>
 	</resultMap>
+	
+	<resultMap type="ReviewImage" id="resImage"/>
+		
 
 	<select id="selectReviewByMemberId" resultMap="resReView">
-		select r.board_code, r.order_code, r2.image, r.title, m2.member_id,
-		r.regist_date
+		select *
 		from review r
 		join `order` o on o.order_code = r.order_code
 		join `member` m on o.member_code = m.member_code

@@ -1,7 +1,6 @@
 package proj21_shoes.dto;
 
 public class OrderProduct {
-
 	private OrderOption orderOption;
 	private int orderCount;
 	
@@ -17,6 +16,8 @@ public class OrderProduct {
 		this.orderOption = orderOption;
 		this.orderCount = orderCount;
 	}
+	
+	
 
 	public OrderOption getOrderOption() {
 		return orderOption;
